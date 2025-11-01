@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.18;
+pragma solidity 0.8.18; // is this recent version?.
 
 /*
  * @author not-so-secure-dev
@@ -11,6 +11,8 @@ contract PasswordStore {
     error PasswordStore__NotOwner();
 
     address private s_owner;
+
+    //@audit s_password data is accessed by anyone onchain so password is not secure by storing it here.
     string private s_password;
 
     event SetNewPassword();
@@ -23,6 +25,8 @@ contract PasswordStore {
      * @notice This function allows only the owner to set a new password.
      * @param newPassword The new password to set.
      */
+
+     //@audit This function is only accessed by owner but in this function anyone set password.
     function setPassword(string memory newPassword) external {
         s_password = newPassword;
         emit SetNewPassword();
@@ -32,6 +36,7 @@ contract PasswordStore {
      * @notice This allows only the owner to retrieve the password.
      * @param newPassword The new password to set.
      */
+     //@audit In this function we need parameter (newPassword)?
     function getPassword() external view returns (string memory) {
         if (msg.sender != s_owner) {
             revert PasswordStore__NotOwner();

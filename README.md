@@ -1,66 +1,60 @@
-## Foundry
+# 🔐 PasswordStore Smart Contract Audit  
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+![Status](https://img.shields.io/badge/Audit-Completed-brightgreen?style=for-the-badge)  
+![Severity](https://img.shields.io/badge/Findings-2_High_1_Info-orange?style=for-the-badge)  
+![Tool](https://img.shields.io/badge/Tool-Foundry-blue?style=for-the-badge)  
+![Language](https://img.shields.io/badge/Solidity-%5E0.8.0-lightgrey?style=for-the-badge)
 
-Foundry consists of:
+---
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+## 🧾 Overview  
 
-## Documentation
+This repository contains a **security audit** of the `PasswordStore` smart contract.  
+The goal was to identify security vulnerabilities, logical flaws, and potential improvements in code quality.
 
-https://book.getfoundry.sh/
+---
 
-## Usage
+## 📊 Audit Summary  
 
-### Build
+| **Severity** | **Count** | **Description** |
+|---------------|------------|------------------|
+| 🔴 **High** | 2 | Critical security flaws affecting contract functionality. |
+| ⚪ **Informational** | 1 | Minor issue or documentation inconsistency. |
 
-```shell
-$ forge build
-```
+---
 
-### Test
+## 🚨 Key Findings  
 
-```shell
-$ forge test
-```
+| ID | Title | Severity |
+|----|--------|-----------|
+| [H-1] | Password stored on-chain (publicly visible) | 🔴 High |
+| [H-2] | Missing access control in `setPassword()` | 🔴 High |
+| [I-1] | Incorrect NatSpec documentation | ⚪ Informational |
 
-### Format
+➡️ Detailed findings are available in the [**PasswordStore-Audit.md**](./PasswordStore-Audit.md) and [**PasswordStore-Audit.pdf**](./PasswordStore-Audit.pdf).
 
-```shell
-$ forge fmt
-```
+---
 
-### Gas Snapshots
+## 🧰 Tools & Environment  
 
-```shell
-$ forge snapshot
-```
+- 🧪 **Foundry** – Contract testing and local deployment  
+- 🧮 **Cast CLI** – Storage inspection and decoding  
+- 📈 **Solidity Metrics** – Code complexity and size analysis  
+- 📊 **CLOC** – Lines of code and comment ratio  
 
-### Anvil
+---
 
-```shell
-$ anvil
-```
+## 👨‍💻 Auditor  
 
-### Deploy
+**Name:** Vaishno Raj  
+**Role:** Smart Contract Security Auditor  
+**Focus:** Solidity • Foundry • Web3 Security • Audit Competitions  
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
+🔗 *Building secure, transparent, and efficient blockchain systems.*
 
-### Cast
+---
 
-```shell
-$ cast <subcommand>
-```
+## ⭐ Support  
 
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+If you found this helpful, consider giving the repo a ⭐ to support my work!  
+Let's make Web3 more secure together 💪  
