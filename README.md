@@ -13,6 +13,11 @@ This repository contains a **security audit** of the `PasswordStore` smart contr
 The goal was to identify security vulnerabilities, logical flaws, and potential improvements in code quality.
 
 ---
+## 🔗 Original Contract
+
+The audited contract is based on the **PasswordStore** example from Patrick Collins' [Cyfrin Updraft Course](https://github.com/Cyfrin/3-passwordstore-audit/tree/onboarded)
+
+---
 
 ## 📊 Audit Summary  
 
@@ -31,12 +36,8 @@ The goal was to identify security vulnerabilities, logical flaws, and potential 
 | [H-2] | Missing access control in `setPassword()` | 🔴 High |
 | [I-1] | Incorrect NatSpec documentation | ⚪ Informational |
 
-➡️ Detailed findings are available in the [**PasswordStore-Audit.md**](./PasswordStore-Audit.md) and [**PasswordStore-Audit.pdf**](./PasswordStore-Audit.pdf).
-
----
 
 ## 🧰 Tools & Environment  
-
 - 🧪 **Foundry** – Contract testing and local deployment  
 - 🧮 **Cast CLI** – Storage inspection and decoding  
 - 📈 **Solidity Metrics** – Code complexity and size analysis  
